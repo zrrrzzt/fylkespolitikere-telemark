@@ -1,0 +1,25 @@
+{
+  "name": "fylkespolitikere-telemark",
+  "version": "1.0.0",
+  "private": true,
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test/*.js",
+    "collect": "node utils/buildDataFile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/zrrrzzt/fylkespolitikere-telemark.git"
+  },
+  "bugs": {
+    "url": "http://github.com/zrrrzzt/fylkespolitikere-telemark/issues"
+  }
+}
