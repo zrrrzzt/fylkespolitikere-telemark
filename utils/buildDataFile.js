@@ -73,11 +73,12 @@ function getPolitikere() {
         idx.add(pIndex);
         politikere.push(p);
       });
+
+      data.politikere = politikere;
+      doWrite();
+
     }
   });
-
-  data.politikere = politikere;
-  doWrite();
 
 }
 
@@ -140,5 +141,5 @@ function getUtvalg() {
 }
 
 getPartier();
-getPolitikere();
 getUtvalg();
+getPolitikere();
