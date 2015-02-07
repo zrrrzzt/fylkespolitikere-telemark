@@ -21,5 +21,8 @@
   },
   "bugs": {
     "url": "http://github.com/zrrrzzt/fylkespolitikere-telemark/issues"
+  },
+  "dependencies": {
+    "lunr": "^0.5.7"
   }
 }
