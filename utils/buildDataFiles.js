@@ -50,19 +50,20 @@ function doWrite(){
 }
 
 function getPolitikere() {
-  var politikere = [];
+  var politikere = {};
 
   getData('http://ws.t-fk.no/?resource=politicians&search=all&format=json', function(err, result) {
     if (err) {
       console.error(err);
     } else {
       result.forEach(function(item){
+        var joinedName = item.givenName + ' ' + item.middleName + ' ' + item.familyName;
         var p = {
-          name: item.givenName + ' ' + item.middleName + ' ' + item.familyName,
+          name: joinedName.replace('  ', ' '),
           firstName: item.givenName,
           middleName: item.middleName,
           lastName: item.familyName,
-          id: 'politiker_' + item.personId
+          id: 'politikere_' + item.personId
         };
         var pIndex = {
           id: p.id,
@@ -71,7 +72,7 @@ function getPolitikere() {
         };
 
         idx.add(pIndex);
-        politikere.push(p);
+        politikere[item.personId] = p;
       });
 
       data.politikere = politikere;
@@ -83,7 +84,7 @@ function getPolitikere() {
 }
 
 function getPartier() {
-  var partier = [];
+  var partier = {};
 
   getData('http://ws.t-fk.no/?resource=politicians&search=parties&string=all&format=json', function(err, result) {
     if (err) {
@@ -93,7 +94,7 @@ function getPartier() {
       result.forEach(function(item){
         var p = {
           name: item.partyName,
-          id: 'parti_' + item.partyId
+          id: 'partier_' + item.partyId
         };
         var pIndex = {
           id: p.id,
@@ -102,7 +103,7 @@ function getPartier() {
         };
 
         idx.add(pIndex);
-        partier.push(p);
+        partier[item.partyId] = p;
       });
 
       data.partier = partier;
@@ -113,7 +114,7 @@ function getPartier() {
 }
 
 function getUtvalg() {
-  var utvalg = [];
+  var utvalg = {};
 
   getData('http://ws.t-fk.no/?resource=politicians&search=committees&string=all&format=json', function(err, result) {
     if (err) {
@@ -131,7 +132,7 @@ function getUtvalg() {
         };
 
         idx.add(uIndex);
-        utvalg.push(u);
+        utvalg[item.committeeId] = u;
       });
 
       data.utvalg = utvalg;
