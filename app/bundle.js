@@ -21,7 +21,8 @@ var SearchBar = React.createClass({displayName: "SearchBar",
           placeholder: "Søk...", 
           value: this.props.searchText, 
           ref: "searchTextInput", 
-          onChange: this.handleChange}
+          onChange: this.handleChange, 
+          className: "u-full-width"}
         )
       )
     );
@@ -59,7 +60,7 @@ var ResultTable = React.createClass({displayName: "ResultTable",
       rows.push(React.createElement(ResultRow, {result: resolveIndex(result.ref), key: result.ref}));
     }.bind(this));
     return (
-      React.createElement("table", null, 
+      React.createElement("table", {className: "u-full-width"}, 
         React.createElement("thead", null, 
           React.createElement("tr", null, 
             React.createElement("th", null, "Name"), 
@@ -89,7 +90,7 @@ var FilterableProductTable = React.createClass({displayName: "FilterableProductT
 
   render: function() {
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {className: "container"}, 
         React.createElement(SearchBar, {
           searchText: this.state.searchText, 
           onUserInput: this.handleUserInput}

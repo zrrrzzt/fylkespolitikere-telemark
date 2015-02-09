@@ -17,6 +17,7 @@ var SearchBar = React.createClass({
           value={this.props.searchText}
           ref="searchTextInput"
           onChange={this.handleChange}
+          className="u-full-width"
         />
       </form>
     );

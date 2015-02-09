@@ -26,7 +26,7 @@ var ResultTable = React.createClass({
       rows.push(<ResultRow result={resolveIndex(result.ref)} key={result.ref} />);
     }.bind(this));
     return (
-      <table>
+      <table className="u-full-width">
         <thead>
           <tr>
             <th>Name</th>
@@ -56,7 +56,7 @@ var FilterableProductTable = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="container">
         <SearchBar
           searchText={this.state.searchText}
           onUserInput={this.handleUserInput}
