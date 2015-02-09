@@ -11,10 +11,13 @@ var SearchBar = React.createClass({
   render: function() {
     return (
       <form>
-        <input type="text" placeholder="Søk..."
+        <input
+          type="text"
+          placeholder="Søk..."
           value={this.props.searchText}
           ref="searchTextInput"
-          onChange={this.handleChange} />
+          onChange={this.handleChange}
+        />
       </form>
     );
   }
