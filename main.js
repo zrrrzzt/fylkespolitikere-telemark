@@ -4,42 +4,12 @@ var http = require('http');
 var React = require('react');
 var lunr = require('lunr');
 var SearchBar  = require('./elements/searchbar');
-var resolveIndex = require('./utils/resolveindex');
+var ResultTable  = require('./elements/resulttable');
 var indexDump = require('./data/index.json');
 var idx = lunr.Index.load(indexDump);
 
-var ResultRow = React.createClass({
-  render: function() {
-    return (
-      <tr>
-        <td>{this.props.result.name}</td>
-        <td>{this.props.result.id}</td>
-      </tr>
-    );
-  }
-});
 
-var ResultTable = React.createClass({
-  render: function() {
-    var rows = [];
-    this.props.results.forEach(function(result) {
-      rows.push(<ResultRow result={resolveIndex(result.ref)} key={result.ref} />);
-    }.bind(this));
-    return (
-      <table className="u-full-width">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Id</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
-    );
-  }
-});
-
-var FilterableProductTable = React.createClass({
+var App = React.createClass({
   getInitialState: function() {
     return {
       searchText: '',
@@ -69,4 +39,4 @@ var FilterableProductTable = React.createClass({
   }
 });
 
-React.render(<FilterableProductTable idx={idx} />, document.body);
+React.render(<App idx={idx} />, document.body);
