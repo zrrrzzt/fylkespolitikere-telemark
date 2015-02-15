@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var resolveIndex = require('./utils/resolveindex');
+var resolveIndex = require('../utils/resolveindex');
 
 var ResultRow = React.createClass({
   render: function() {
