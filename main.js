@@ -5,6 +5,7 @@ var React = require('react');
 var lunr = require('lunr');
 var SearchBar  = require('./elements/searchbar');
 var ResultTable  = require('./elements/resulttable');
+var Menu = require('./elements/menu');
 var indexDump = require('./data/index.json');
 var idx = lunr.Index.load(indexDump);
 
@@ -27,6 +28,7 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="container">
+        <Menu />
         <SearchBar
           searchText={this.state.searchText}
           onUserInput={this.handleUserInput}
