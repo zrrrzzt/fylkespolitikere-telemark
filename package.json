@@ -32,7 +32,7 @@
     "gulp-uglify": "^2.0.0",
     "lunr": "^0.7.2",
     "react": "^15.3.2",
-    "reactify": "^1.0.0",
+    "reactify": "^1.1.1",
     "run-sequence": "^1.0.2",
     "uglify-js": "^2.4.16",
     "vinyl-buffer": "^1.0.0",
