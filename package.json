@@ -33,7 +33,7 @@
     "lunr": "^2.0.0",
     "react": "^15.3.2",
     "reactify": "^1.0.0",
-    "run-sequence": "^1.0.2",
+    "run-sequence": "^2.0.0",
     "uglify-js": "^3.0.4",
     "vinyl-buffer": "^1.0.0",
     "vinyl-map": "^1.0.1",
