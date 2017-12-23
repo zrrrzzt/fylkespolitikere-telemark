@@ -35,7 +35,7 @@
     "reactify": "^1.0.0",
     "run-sequence": "^2.1.0",
     "uglify-js": "^3.0.4",
-    "vinyl-buffer": "^1.0.0",
+    "vinyl-buffer": "^1.0.1",
     "vinyl-map": "^1.0.1",
     "vinyl-source-stream": "^1.0.0"
   }
