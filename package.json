@@ -31,7 +31,7 @@
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "3.0.0",
     "lunr": "2.2.1",
-    "react": "16.4.0",
+    "react": "16.4.1",
     "reactify": "1.1.1",
     "run-sequence": "2.2.1",
     "uglify-js": "3.4.0",
